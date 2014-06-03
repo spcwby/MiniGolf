@@ -28,4 +28,9 @@ public class Physics {
 		
 		return n;
 	}
+	
+	public double mag(Vec3D v)
+	{
+		return Math.sqrt(v.x*v.x+v.y*v.y+v.z*v.z);
+	}
 }

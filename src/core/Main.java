@@ -41,7 +41,7 @@ public class Main {
 		//m = new Map();
 		//m.setMap(0);
 		//System.out.println(m.getCurrentMap().getWidth());
-		m = new Map();
+		m = new Map(this);
 		m.setMap(0);
 		if(m.getCurrentMap()!=null) System.out.println(m.getCurrentMap());
 		

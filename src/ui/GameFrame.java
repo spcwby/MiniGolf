@@ -21,7 +21,7 @@ import core.Main;
 
 public class GameFrame extends AbstractFrame {
 	private static final long serialVersionUID = -7507150408519508299L;
-	static final int HEIGHT = 468, WIDTH = 800;
+	public static final int HEIGHT = 468, WIDTH = 800;
 	static final String TITLE = "game window";
 	Image splashScreen;
 	BufferedImage ball;
@@ -57,7 +57,7 @@ public class GameFrame extends AbstractFrame {
 			g.setColor(Color.BLACK);
 			g.drawLine(ballX, ballY, ballX+40, ballY);
 			g.drawImage(ball, ballX - GameData.BALL_RADIUS, ballY -GameData.BALL_RADIUS, null);
-			g.drawImage(flag, powX - GameData.BALL_RADIUS, powY -GameData.BALL_RADIUS, null);
+			g.drawImage(flag, main.m.flagX, main.m.flagY, null);
 
 		}
 	};

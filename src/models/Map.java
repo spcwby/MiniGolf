@@ -6,19 +6,32 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
+
+import ui.GameFrame;
+import core.Main;
 
 public class Map {
 	Image currentMap;
 	BufferedImage zMap, ball, flag;
 	ArrayList<GolfObject> golfObjects;
-	Rectangle screenBounds = new Rectangle(800, 468);
+	Rectangle screenBounds = new Rectangle(GameFrame.WIDTH, GameFrame.HEIGHT);
+	
 	String[] filepaths = {
 		"/Users/jtc/Desktop/color.jpg",
 		"/Users/jtc/Desktop/gray.jpg"
 	};
+
+	public int flagX  = 0, flagY = 0;
+	{
+		Random r = new Random();
+		flagX = r.nextInt((int) screenBounds.getWidth());
+		flagY = r.nextInt((int) screenBounds.getHeight());
+	}
 	
+	Main main;
 	/**
 	 * keys for map numbers:
 	 * 
@@ -27,8 +40,9 @@ public class Map {
 	 * 19 is the pause menu / scorecard.
 	 * 
 	 */
-	public Map()
+	public Map(Main m)
 	{
+		main = m;
 		setMap(0);
 		
 
