@@ -33,17 +33,23 @@ public class Main {
 	public ArrayList<Thread> threads = new ArrayList<Thread>();
 	public FrameListener listen1, listen2, listen3;
 	public GameData game = new GameData(this);
+	public Physics physics;
 	
 
 	public Main()
 	{
+		
 		System.out.println("program started");
 		//m = new Map();
 		//m.setMap(0);
 		//System.out.println(m.getCurrentMap().getWidth());
+		physics = new Physics(this);
+		
 		m = new Map(this);
 		m.setMap(0);
 		if(m.getCurrentMap()!=null) System.out.println(m.getCurrentMap());
+		
+		
 		
 		frame1Thread = new Thread(frame1 = new StartMenuFrame(true));
 		listen1 = new StartMenuListener(frame1, this);

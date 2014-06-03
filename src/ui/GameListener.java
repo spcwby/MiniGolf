@@ -36,8 +36,13 @@ public class GameListener extends FrameListener {
 			break;
 		case A:
 			System.out.println("shot fired!");
-			g.ball[0].x = (int) (g.ball[0].x + Math.cos(g.angle)*g.power);
-			g.ball[0].y = (int) (g.ball[0].y + Math.sin(g.angle)*g.power);
+			
+			// convert the power from the shot into velocity using MAGIC
+			g.ball[1].x = (int) (Math.cos(g.angle)*g.power);
+			g.ball[1].y = (int) (Math.sin(g.angle)*g.power);
+			g.ball[0].z = main.m.getZ((int) g.ball[0].x, (int) g.ball[0].y);
+			main.physics.putt();
+			
 			g.power = 40.0;
 			break;
 		case START:

@@ -9,4 +9,10 @@ public class Vec3D {
 		y = b;
 		z = c;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "<"+x+","+y+","+z+">";
+	}
 }

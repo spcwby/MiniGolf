@@ -25,11 +25,7 @@ public class Map {
 	};
 
 	public int flagX  = 0, flagY = 0;
-	{
-		Random r = new Random();
-		flagX = r.nextInt((int) screenBounds.getWidth());
-		flagY = r.nextInt((int) screenBounds.getHeight());
-	}
+
 	
 	Main main;
 	/**
@@ -44,7 +40,9 @@ public class Map {
 	{
 		main = m;
 		setMap(0);
-		
+		Random r = new Random();
+		flagX = r.nextInt((int) screenBounds.getWidth());
+		flagY = r.nextInt((int) screenBounds.getHeight());
 
 		ball = toBufferedImage(load("/models/ball2.png"));
 		flag = toBufferedImage(load("/models/flag.png"));
